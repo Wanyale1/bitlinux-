@@ -115,6 +115,7 @@ nav ul li a{
   margin-bottom:15px;
   font-size:14px;
   text-decoration:none;
+  display:block;
 }
 
 .contact-info i{
