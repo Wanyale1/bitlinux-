@@ -41,10 +41,10 @@ nav ul li a{
   justify-content:space-between;
   align-items:center;
   padding:50px;
-  background:linear-gradient(to right,#0d1117,#161b22);
+  
   color:white;
   flex-wrap:wrap;
-  background-image: url(https://www.othware.co.ug/wp-content/uploads/2024/09/2149406768.jpg);
+  background-image: url("https://www.othware.co.ug/wp-content/uploads/2024/09/2149406768.jpg");
   background-position: center;
   background-repeat:no-repeat;
   background-size:cover;
