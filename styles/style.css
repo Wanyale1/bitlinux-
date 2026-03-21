@@ -44,6 +44,11 @@ nav ul li a{
   background:linear-gradient(to right,#0d1117,#161b22);
   color:white;
   flex-wrap:wrap;
+  background-image: url(https://www.othware.co.ug/wp-content/uploads/2024/09/2149406768.jpg);
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
 }
 
 .hero-text{
@@ -55,10 +60,7 @@ nav ul li a{
   margin-bottom:20px;
 }
 
-.hero p{
-  margin-bottom:20px;
-  line-height:1.5;
-}
+
 
 .hero button{
   padding:12px 25px;
