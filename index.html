@@ -1,65 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BitLinux | Web Hosting Company</title>
-  <link rel="stylesheet" href="styles/style.css">
 
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BitLinux | Web Hosting, Programming Tutorials & Developer Platform</title>
+
+<link rel="stylesheet" href="styles/style.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h1>BitLinux</h1>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="HTML/doc.html">Docs</a></li>
-      <li><a href="HTML/pricing.html">Pricing</a></li>
-      <li><a href="HTML/contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<!-- ================= NAVBAR ================= -->
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Reliable Web Hosting for Everyone</h2>
-      <p>Fast, secure, and easy-to-use hosting solutions for your website or application.</p>
-      <button>Get Started</button>
-    </div>
-    
-  </section>
+<nav class="navbar">
 
-  <!-- FEATURES -->
-  <section class="features">
-    <div class="card">
-      <i class="fas fa-server"></i>
-      <h3>Fast Servers</h3>
-      <p>Optimized servers for maximum speed and uptime.</p>
-    </div>
+<div class="logo">
+<h1>BitLinux</h1>
+</div>
 
-    <div class="card">
-      <i class="fas fa-shield-alt"></i>
-      <h3>Secure Hosting</h3>
-      <p>SSL certificates, firewall protection, and daily backups.</p>
-    </div>
+<ul class="nav-links">
 
-    <div class="card">
-      <i class="fas fa-headset"></i>
-      <h3>24/7 Support</h3>
-      <p>Our team is always here to help with your hosting needs.</p>
-    </div>
-    <div class="card">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd9QQG3KYa2a3VQsSwH0VTFBujuaHvE1Wz6Jlzz0-Y5JHr6Lg/viewform?embedded=true" width="240" height="698" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </div>
-  </section>
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 BitLinux | Your trusted web hosting partner</p>
-  </footer>
+<li><a href="index.html">Home</a></li>
+
+<li><a href="pages/hosting.html">Hosting</a></li>
+
+<li><a href="pages/learn.html">Learn</a></li>
+
+<li><a href="blog/index.html">Blog</a></li>
+
+<li class="dropdown">
+
+<a href="#">More <i class="fa-solid fa-caret-down"></i></a>
+
+<ul class="dropdown-menu">
+<li><a href="pages/docs.html">Docs</a></li>
+<li><a href="pages/pricing.html">Pricing</a></li>
+<li><a href="pages/contact.html">Contact</a></li>
+<li><a href="pages/faq.html">FAQ</a></li>
+</ul>
+
+</li>
+
+</ul>
+
+<div class="nav-actions">
+<a href="#" class="btn">Get Started</a>
+</div>
+
+<!-- Hamburger -->
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Build, Deploy and Learn Programming in One Platform</h1>
+
+<p>
+BitLinux provides fast web hosting, developer tools,
+and programming tutorials to help you build modern websites.
+</p>
+
+<div class="hero-buttons">
+<a href="#" class="btn">Get Started</a>
+<a href="pages/learn.html" class="btn-secondary">Start Learning</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features section">
+
+<h2 class="section-title">Powerful Hosting for Developers</h2>
+
+<div class="grid">
+
+<div class="card">
+<i class="fas fa-server"></i>
+<h3>Fast Servers</h3>
+<p>Optimized infrastructure for maximum performance and uptime.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-globe"></i>
+<h3>Global CDN</h3>
+<p>Your website is delivered worldwide with low latency.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-lock"></i>
+<h3>Free SSL</h3>
+<p>Secure your website with automatic HTTPS certificates.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-rocket"></i>
+<h3>Instant Deploy</h3>
+<p>Deploy your websites in seconds with BitLinux.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-shield-alt"></i>
+<h3>Secure Hosting</h3>
+<p>Advanced firewall protection and secure infrastructure.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-headset"></i>
+<h3>24/7 Support</h3>
+<p>Our support team is always available to help.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how-it-works section">
+
+<h2 class="section-title">Deploy in 3 Simple Steps</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>1. Create Project</h3>
+<p>Create your project and configure your website.</p>
+</div>
+
+<div class="card">
+<h3>2. Upload Files</h3>
+<p>Upload your HTML, CSS and JavaScript files.</p>
+</div>
+
+<div class="card">
+<h3>3. Deploy</h3>
+<p>Your website goes live instantly across the world.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LEARN PROGRAMMING ================= -->
+
+<section class="learn section">
+
+<h2 class="section-title">Learn Programming with BitLinux</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>HTML</h3>
+<p>Learn how to structure websites from scratch.</p>
+</div>
+
+<div class="card">
+<h3>CSS</h3>
+<p>Master layouts, flexbox, grid and responsive design.</p>
+</div>
+
+<div class="card">
+<h3>JavaScript</h3>
+<p>Add interactivity and build modern web applications.</p>
+</div>
+
+<div class="card">
+<h3>Git & GitHub</h3>
+<p>Learn version control and collaborate with developers.</p>
+</div>
+
+</div>
+
+<div class="center">
+<a href="pages/learn.html" class="btn">Start Learning</a>
+</div>
+
+</section>
+
+
+<!-- ================= BLOG PREVIEW ================= -->
+
+<section class="blog-preview section">
+
+<h2 class="section-title">Latest Articles</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>How to Host a Website</h3>
+<p>A beginner guide to hosting your first website.</p>
+<a href="#">Read More</a>
+</div>
+
+<div class="card">
+<h3>Understanding CSS Flexbox</h3>
+<p>Learn how Flexbox simplifies layouts.</p>
+<a href="#">Read More</a>
+</div>
+
+<div class="card">
+<h3>JavaScript Basics</h3>
+<p>Start programming with JavaScript today.</p>
+<a href="#">Read More</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRICING PREVIEW ================= -->
+
+<section class="pricing-preview section">
+
+<h2 class="section-title">Simple Pricing</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Starter</h3>
+<p class="price">$0/month</p>
+<p>1 Website</p>
+<p>Basic Support</p>
+</div>
+
+<div class="card">
+<h3>Pro</h3>
+<p class="price">$12/month</p>
+<p>10 Websites</p>
+<p>Priority Support</p>
+</div>
+
+<div class="card">
+<h3>Business</h3>
+<p class="price">$29/month</p>
+<p>Unlimited Websites</p>
+<p>Premium Support</p>
+</div>
+
+</div>
+
+<div class="center">
+<a href="pages/pricing.html" class="btn">View Pricing</a>
+</div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="faq section">
+
+<h2 class="section-title">Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<h3>What is BitLinux?</h3>
+<p>A platform for hosting websites and learning programming.</p>
+</div>
+
+<div class="faq-item">
+<h3>Can I host multiple websites?</h3>
+<p>Yes, depending on the hosting plan you choose.</p>
+</div>
+
+<div class="faq-item">
+<h3>Are programming tutorials free?</h3>
+<p>Yes, many tutorials are free for beginners.</p>
+</div>
+
+</section>
+
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="cta">
+
+<h2>Ready to Build and Deploy Your Website?</h2>
+
+<p>Start using BitLinux today and launch your project.</p>
+
+<a href="#" class="btn">Get Started</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>BitLinux</h3>
+<p>Web hosting, developer tools and programming education.</p>
+</div>
+
+<div>
+<h4>Platform</h4>
+<ul>
+<li><a href="pages/docs.html">Docs</a></li>
+<li><a href="pages/pricing.html">Pricing</a></li>
+<li><a href="pages/learn.html">Learn</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Resources</h4>
+<ul>
+<li><a href="blog/index.html">Blog</a></li>
+<li><a href="pages/faq.html">FAQ</a></li>
+<li><a href="pages/contact.html">Contact</a></li>
+</ul>
+</div>
+
+</div>
+
+<p class="copyright">
+© 2026 BitLinux. All rights reserved.
+</p>
+
+</footer>
+
 
 </body>
-</html>
+
+  </html>
         
