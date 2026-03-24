@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing | BitLinux</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    background:#f0f4f8;
+    color:#333;
+  }
+  nav {
+    background:#2563eb;
+    color:white;
+    padding:15px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  nav h1 {
+    margin:0;
+    font-size:24px;
+  }
+  .container {
+    padding:60px 10%;
+    text-align:center;
+  }
+  .container h2 {
+    color:#2563eb;
+    margin-bottom:20px;
+  }
+  .cards {
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:30px;
+  }
+  .card {
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    width:250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor:pointer;
+  }
+  .card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  }
+  .card h3 {
+    color:#2563eb;
+    margin-bottom:15px;
+  }
+  .price {
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:15px;
+  }
+  .card p {
+    color:#555;
+    margin-bottom:20px;
+  }
+  .card button {
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+  }
+  .card button:hover {
+    background:#1e40af;
+    transition:0.3s;
+  }
+  @media(max-width:768px){
+    .cards { flex-direction:column; align-items:center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>BitLinux Pricing</h1>
+</nav>
+
+<div class="container">
+  <h2>Choose Your Plan</h2>
+  <p>Select the plan that fits your needs.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Free</h3>
+      <div class="price">$0</div>
+      <p>Basic access to hosting and learning resources.</p>
+      <button>Choose Plan</button>
+    </div>
+
+    <div class="card">
+      <h3>Pro</h3>
+      <div class="price">$9.99/mo</div>
+      <p>Advanced hosting features, GitHub and Vercel integration.</p>
+      <button>Choose Plan</button>
+    </div>
+
+    <div class="card">
+      <h3>Enterprise</h3>
+      <div class="price">$29.99/mo</div>
+      <p>Full access to all features, priority support, and analytics.</p>
+      <button>Choose Plan</button>
+    </div>
+  </div>
+</div>
+
+</body>
+  </html>
