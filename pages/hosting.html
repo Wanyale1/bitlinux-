@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hosting | BitLinux</title>
+
+<style>
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f0f4f8;
+}
+
+nav{
+background:#2563eb;
+color:white;
+padding:15px 10%;
+}
+
+.container{
+text-align:center;
+padding:60px 10%;
+}
+
+.connect-btn{
+background:#2563eb;
+color:white;
+border:none;
+padding:15px 25px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+.connect-btn:hover{
+background:#1e40af;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+max-width:400px;
+margin:auto;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<h1>BitLinux Hosting</h1>
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Connect GitHub</h2>
+
+<p>To deploy your website, connect your GitHub account.</p>
+
+<button class="connect-btn" onclick="connectGithub()">
+Connect GitHub
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function connectGithub(){
+
+const clientID = "Ov23liBTkihKJOhHrXT4";
+
+const githubAuthURL =
+"https://github.com/login/oauth/authorize?client_id="
++ clientID +
+"&scope=repo";
+
+window.location.href = githubAuthURL;
+
+}
+
+</script>
+
+</body>
+</html>
