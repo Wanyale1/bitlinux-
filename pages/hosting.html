@@ -6,6 +6,7 @@
 <title>Hosting | BitLinux</title>
 
 <style>
+
 body{
 font-family: Arial, Helvetica, sans-serif;
 margin:0;
@@ -23,6 +24,21 @@ text-align:center;
 padding:60px 10%;
 }
 
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+max-width:400px;
+}
+
 .connect-btn{
 background:#2563eb;
 color:white;
@@ -37,14 +53,20 @@ cursor:pointer;
 background:#1e40af;
 }
 
-.card{
-background:white;
-padding:40px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-max-width:400px;
-margin:auto;
+.deploy-btn{
+background:black;
+color:white;
+border:none;
+padding:15px 25px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
 }
+
+.deploy-btn:hover{
+opacity:0.8;
+}
+
 </style>
 
 </head>
@@ -57,6 +79,10 @@ margin:auto;
 
 <div class="container">
 
+<div class="cards">
+
+<!-- Connect GitHub Card -->
+
 <div class="card">
 
 <h2>Connect GitHub</h2>
@@ -66,6 +92,22 @@ margin:auto;
 <button class="connect-btn" onclick="connectGithub()">
 Connect GitHub
 </button>
+
+</div>
+
+<!-- Deploy to Vercel Card -->
+
+<div class="card">
+
+<h2>Deploy to Vercel</h2>
+
+<p>Deploy your GitHub repository instantly.</p>
+
+<button class="deploy-btn" onclick="deployVercel()">
+Deploy to Vercel
+</button>
+
+</div>
 
 </div>
 
@@ -83,6 +125,12 @@ const githubAuthURL =
 "&scope=repo";
 
 window.location.href = githubAuthURL;
+
+}
+
+function deployVercel(){
+
+window.location.href = "https://vercel.com/new";
 
 }
 
