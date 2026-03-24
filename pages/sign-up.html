@@ -106,7 +106,53 @@
 
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <!---Firebase Config--->
+  <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCqaLp0H7dGVDWB8kFPMDNnbeYCcs4LufI",
+    authDomain: "bitlinux-419e6.firebaseapp.com",
+    projectId: "bitlinux-419e6",
+    storageBucket: "bitlinux-419e6.firebasestorage.app",
+    messagingSenderId: "177680359131",
+    appId: "1:177680359131:web:7822d4063d3da2037c76fe",
+    measurementId: "G-70E04RSG6W"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  </script>
+  <!---Sign Up form Js--->
+  <script>
+  const signupForm = document.getElementById('signup-form');
+  const messageDiv = document.getElementById('message');
+
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = signupForm['name'].value.trim();
+    const email = signupForm['email'].value.trim();
+    const password = signupForm['password'].value;
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        user.updateProfile({ displayName: name });
+        messageDiv.style.color = "green";
+        messageDiv.textContent = `Welcome ${name}! Account created successfully.`;
+
+        // Redirect to dashboard
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1500);
+      })
+      .catch((error) => {
+        messageDiv.style.color = "red";
+        messageDiv.textContent = error.message;
+      });
+  });
+  </script>
 </head>
 <body>
 
