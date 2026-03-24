@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Connection | BitLinux</title>
+
+<style>
+body{
+font-family: Arial, Helvetica, sans-serif;
+background:#f0f4f8;
+text-align:center;
+padding:60px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+max-width:400px;
+margin:auto;
+}
+
+h2{
+color:#2563eb;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+<h2>Connecting GitHub...</h2>
+<p>Please wait while we complete the connection.</p>
+</div>
+
+<script>
+
+// Get the code from the URL
+const params = new URLSearchParams(window.location.search);
+const code = params.get("code");
+
+if(code){
+
+console.log("GitHub code:", code);
+
+// For now we just store it
+localStorage.setItem("github_code", code);
+
+// Redirect back to hosting page
+setTimeout(()=>{
+window.location.href = "hosting.html";
+},1500);
+
+}else{
+
+document.body.innerHTML =
+"<h2>GitHub connection failed</h2>";
+
+}
+
+</script>
+
+</body>
+</html>
