@@ -79,7 +79,7 @@
           const user = userCredential.user;
           messageDiv.style.color = "green";
           messageDiv.textContent = `Welcome back, ${user.displayName || user.email}!`;
-          setTimeout(() => { window.location.href = "dashboard.html"; }, 1000);
+          setTimeout(() => { window.location.href = "pages/dashboard.html"; }, 1000);
         })
         .catch((error) => {
           messageDiv.style.color = "red";
