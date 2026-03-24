@@ -1,160 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard | BitLinux</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | BitLinux</title>
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; margin:0; padding:0; background:#f0f4f8; color:#333;}
+  nav { background:#2563eb; color:white; padding:15px 10%; display:flex; justify-content:space-between; align-items:center;}
+  nav h1 { margin:0; font-size:24px;}
+  nav button { background:white; color:#2563eb; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold;}
+  nav button:hover { background:#e0e7ff; transition:0.3s;}
+  .container { padding:50px 10%; text-align:center;}
+  .container h2 { font-size:28px; margin-bottom:20px; color:#2563eb;}
+  .cards { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:30px;}
+  .card { background:white; padding:30px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.1); width:250px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer;}
+  .card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+  .card h3 { color:#2563eb; margin-bottom:15px;}
+  .card p { color:#555;}
+  @media (max-width:768px){ .cards{ flex-direction:column; align-items:center; } }
+</style>
 
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f0f4f8;
-      color: #333;
-    }
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 
-    nav {
-      background: #2563eb;
-      color: white;
-      padding: 15px 10%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    nav button {
-      background: white;
-      color: #2563eb;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    nav button:hover {
-      background: #e0e7ff;
-      transition: 0.3s;
-    }
-
-    .container {
-      padding: 50px 10%;
-      text-align: center;
-    }
-
-    .container h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #2563eb;
-    }
-
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      width: 250px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-
-    .card h3 {
-      color: #2563eb;
-      margin-bottom: 15px;
-    }
-
-    .card p {
-      color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
-
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <h1>BitLinux Dashboard</h1>
-    <button id="logout-btn">Logout</button>
-  </nav>
+<nav>
+  <h1>BitLinux Dashboard</h1>
+  <button id="logout-btn">Logout</button>
+</nav>
 
-  <div class="container">
-    <h2 id="welcome-msg">Welcome!</h2>
-    <p>Choose what you want to do next:</p>
+<div class="container">
+  <h2 id="welcome-msg">Welcome!</h2>
+  <p>Choose what you want to do next:</p>
 
-    <div class="cards">
-      <div class="card" onclick="window.location.href='hosting.html'">
-        <h3>Start Hosting</h3>
-        <p>Create and manage your websites with our fast servers.</p>
-      </div>
+  <div class="cards">
+    <div class="card" onclick="window.location.href='hosting.html'">
+      <h3>Start Hosting</h3>
+      <p>Create and manage your websites with our fast servers.</p>
+    </div>
 
-      <div class="card" onclick="window.location.href='learn.html'">
-        <h3>Learn Programming</h3>
-        <p>Start learning web development and programming tutorials.</p>
-      </div>
+    <div class="card" onclick="window.location.href='learn.html'">
+      <h3>Learn Programming</h3>
+      <p>Start learning web development and programming tutorials.</p>
     </div>
   </div>
+</div>
 
-  <script>
-    // Firebase config
-    const firebaseConfig = {
-      apiKey: "AIzaSyCqaLp0H7dGVDWB8kFPMDNnbeYCcs4LufI",
-      authDomain: "bitlinux-419e6.firebaseapp.com",
-      projectId: "bitlinux-419e6",
-      storageBucket: "bitlinux-419e6.firebasestorage.app",
-      messagingSenderId: "177680359131",
-      appId: "1:177680359131:web:7822d4063d3da2037c76fe",
-      measurementId: "G-70E04RSG6W"
-    };
+<script>
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCqaLp0H7dGVDWB8kFPMDNnbeYCcs4LufI",
+    authDomain: "bitlinux-419e6.firebaseapp.com",
+    projectId: "bitlinux-419e6",
+    storageBucket: "bitlinux-419e6.firebasestorage.app",
+    messagingSenderId: "177680359131",
+    appId: "1:177680359131:web:7822d4063d3da2037c76fe"
+  };
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
 
-    // Check if user is logged in
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        document.getElementById('welcome-msg').textContent = `Welcome, ${user.displayName || user.email}!`;
-      } else {
-        // Not logged in, redirect to signup page
-        window.location.href = "signup.html";
-      }
-    });
+  // Show welcome message
+  auth.onAuthStateChanged(user => {
+    if(user){
+      document.getElementById('welcome-msg').textContent = `Welcome, ${user.displayName || user.email}!`;
+    } else {
+      window.location.href = "signup.html"; // Redirect if not logged in
+    }
+  });
 
-    // Logout
-    document.getElementById('logout-btn').addEventListener('click', () => {
-      auth.signOut().then(() => {
-        window.location.href = "signup.html";
-      });
-    });
-  </script>
+  // Logout
+  document.getElementById('logout-btn').addEventListener('click', ()=>{
+    auth.signOut().then(()=>{ window.location.href="signup.html"; });
+  });
+</script>
+
 </body>
   </html>
