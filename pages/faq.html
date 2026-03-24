@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | BitLinux</title>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0; padding:0;
+  background:#f0f4f8;
+  color:#333;
+}
+nav {
+  background:#2563eb;
+  color:white;
+  padding:15px 10%;
+}
+nav h1 { margin:0; font-size:24px; }
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 10%;
+}
+
+h2 { color:#2563eb; text-align:center; margin-bottom:30px; }
+
+.faq-item {
+  background:white;
+  border-radius:10px;
+  margin-bottom:15px;
+  padding:15px 20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition:0.3s;
+}
+.faq-item:hover { box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+
+.faq-item h3 {
+  margin:0;
+  font-size:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.faq-item p {
+  margin-top:10px;
+  display:none;
+  color:#555;
+  line-height:1.6;
+}
+
+.toggle-icon {
+  font-weight:bold;
+  font-size:20px;
+  transition: transform 0.3s;
+}
+
+.active .toggle-icon { transform:rotate(45deg); }
+.active p { display:block; }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>BitLinux FAQ</h1>
+</nav>
+
+<div class="container">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <h3>How do I create an account? <span class="toggle-icon">+</span></h3>
+    <p>To create an account, go to the sign-up page, fill in your details, and click "Create Account".</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I host my website for free? <span class="toggle-icon">+</span></h3>
+    <p>Yes! You can connect your GitHub account and deploy websites to Vercel using our hosting page.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How do I reset my password? <span class="toggle-icon">+</span></h3>
+    <p>If you forget your password, go to the login page and click "Forgot Password?" to reset it via email.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What programming resources are available? <span class="toggle-icon">+</span></h3>
+    <p>Our Learn Programming page provides downloadable PDFs and tutorials for web development and coding.</p>
+  </div>
+
+</div>
+
+<script>
+// Toggle FAQ answers
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});
+</script>
+
+</body>
+  </html>
