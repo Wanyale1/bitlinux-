@@ -181,24 +181,19 @@
   <script>
 const googleBtn = document.getElementById("googleLogin");
 
-googleBtn.onclick = function(){
-
+googleBtn.onclick = function(e){
+  e.preventDefault();  // <- stop form submission just in case
   const provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider)
   .then((result) => {
-
     const user = result.user;
-
     alert("Welcome " + user.displayName);
-
     window.location.href = "dashboard.html";
-
   })
   .catch((error) => {
     console.log(error.message);
   });
-
 };
     </script>
 </body>
