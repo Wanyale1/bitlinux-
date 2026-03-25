@@ -183,20 +183,23 @@
   <script>
 const googleBtn = document.getElementById("googleLogin");
 
-googleBtn.onclick = function(e){
-  e.preventDefault();  // <- stop form submission just in case
+googleBtn.onclick = function(e) {
+  e.preventDefault();
+  console.log("Google button clicked..."); // Check if this shows in F12
+  
   const provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider)
-  .then((result) => {
-    const user = result.user;
-    alert("Welcome " + user.displayName);
-    window.location.href = "dashboard.html";
-  })
-  .catch((error) => {
-    console.log(error.message);
-  });
+    .then((result) => {
+      console.log("Success!", result.user);
+      window.location.href = "dashboard.html";
+    })
+    .catch((error) => {
+      console.error("Firebase Error:", error.code, error.message);
+      alert("Error: " + error.message); // This will stop the refresh so you can read it
+    });
 };
+    
     </script>
 </body>
     </html>
