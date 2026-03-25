@@ -179,33 +179,29 @@
       });
   });
   </script>
-  //sign up using Google 
+  <!--sign up using Google-->
   <script>
-    import { getAuth, signInWithPopup, GoogleAuthProvider } from 
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+const googleBtn = document.getElementById("googleLogin");
 
-const auth = getAuth();
-const provider = new GoogleAuthProvider();
+googleBtn.onclick = function(){
 
-document.getElementById("googleLogin").onclick = function(){
+  const provider = new firebase.auth.GoogleAuthProvider();
 
-signInWithPopup(auth, provider)
-.then((result) => {
+  firebase.auth().signInWithPopup(provider)
+  .then((result) => {
 
-const user = result.user;
-console.log(user);
+    const user = result.user;
 
-alert("Welcome " + user.displayName);
+    alert("Welcome " + user.displayName);
 
-// redirect to dashboard
-window.location.href = "dashboard.html";
+    window.location.href = "dashboard.html";
 
-})
-.catch((error) => {
-console.log(error.message);
-});
+  })
+  .catch((error) => {
+    console.log(error.message);
+  });
 
 };
-  </script>
+    </script>
 </body>
     </html>
