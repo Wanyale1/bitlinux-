@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8f9fb; margin: 0; padding: 0; color: #333; }
+    .container { max-width: 800px; margin: 50px auto; padding: 20px; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { margin-bottom: 10px; }
+    p.meta { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
+    img { max-width: 100%; height: auto; margin-bottom: 20px; }
+    hr { margin: 40px 0; border: 0; border-top: 1px solid #eee; }
+    .latest-posts h2 { margin-bottom: 20px; }
+    .latest-post { margin-bottom: 15px; }
+    .latest-post a { text-decoration: none; color: #2563eb; }
+    .latest-post a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="container" id="post-content">
+  <!-- Post will appear here -->
+</div>
+
+<div class="container latest-posts" id="latest-posts">
+  <!-- Latest posts will appear here -->
+</div>
+
+<script src="posts.js"></script>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const postId = urlParams.get('id');
+  const post = posts.find(p => p.id == postId);
+
+  const postContainer = document.getElementById('post-content');
+  if(post){
+    postContainer.innerHTML = `
+      <h1>${post.title}</h1>
+      <p class="meta">By ${post.author} | ${post.date}</p>
+      <img src="${post.image}" alt="Post image">
+      <p>${post.content}</p>
+    `;
+  } else {
+    postContainer.innerHTML = `<h1>Post not found</h1><p>The post you are looking for does not exist.</p>`;
+  }
+
+  // --- Latest Posts Section ---
+  const latestContainer = document.getElementById('latest-posts');
+  latestContainer.innerHTML = '<h2>Latest Posts</h2>';
+  
+  // Filter out current post
+  const otherPosts = posts.filter(p => p.id != postId);
+
+  // Display each post with a link
+  otherPosts.forEach(p => {
+    latestContainer.innerHTML += `
+      <div class="latest-post">
+        <a href="post.html?id=${p.id}">${p.title}</a> <span class="meta">(${p.date})</span>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>
