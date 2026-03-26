@@ -133,5 +133,33 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 </script>
+  <script>
+  // Google Login
+const googleBtn = document.getElementById("google-login");
+
+googleBtn.addEventListener("click", () => {
+
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  auth.signInWithPopup(provider)
+  .then((result) => {
+
+    const user = result.user;
+
+    messageDiv.style.color = "green";
+    messageDiv.textContent = `Welcome ${user.displayName}!`;
+
+    setTimeout(()=>{
+      window.location.href = "dashboard.html";
+    },1000);
+
+  })
+  .catch((error)=>{
+    messageDiv.style.color = "red";
+    messageDiv.textContent = error.message;
+  });
+
+});
+  </script>
 </body>
 </html>
