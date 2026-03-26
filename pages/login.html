@@ -105,6 +105,13 @@
     });
 
   </script>
-
+<script>
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is already logged in
+    window.location.href = "dashboard.html";
+  }
+});
+</script>
 </body>
 </html>
