@@ -77,6 +77,13 @@
     auth.signOut().then(()=>{ window.location.href="sign-up.html"; });
   });
 </script>
-
+<script>
+firebase.auth().onAuthStateChanged(function(user) {
+  if (!user) {
+    // Not logged in
+    window.location.href = "login.html";
+  }
+});
+</script>
 </body>
   </html>
