@@ -11,7 +11,7 @@ link:"post.html?id=html-basics"
 {
 title:"CSS Flexbox Guide",
 description:"Learn how Flexbox layouts work.",
-image:"images/css.png",
+image:"images/css.jpeg",
 link:"post.html?id=css-flexbox"
 },
 
