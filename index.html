@@ -365,7 +365,13 @@ and programming tutorials to help you build modern websites.
 
 </footer>
 <script src="scripts/script.js">
-  
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is already logged in
+    window.location.href = "dashboard.html";
+  }
+});
 </script>
 </body>
 
