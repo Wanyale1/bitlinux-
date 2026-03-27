@@ -366,7 +366,27 @@ and programming tutorials to help you build modern websites.
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script>
+  const auth = firebase.auth();
 
+  document.querySelectorAll('.protected-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // Stop default navigation
+      const targetPage = link.getAttribute('data-target');
+
+      auth.onAuthStateChanged(user => {
+        if (user) {
+          // If user is logged in, go to the target page
+          window.location.href = targetPage;
+        } else {
+          // If user is NOT logged in, go to sign-up page
+          // Pass the target page as a query parameter so you can redirect after login
+          window.location.href = `pages/sign-up.html?redirect=${encodeURIComponent(targetPage)}`;
+        }
+      });
+    });
+  });
+</script>
 <script>
 const firebaseConfig = {
   apiKey: "AIzaSyCqaLp0H7dGVDWB8kFPMDNnbeYCcs4LufI",
