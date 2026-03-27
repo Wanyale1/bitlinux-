@@ -10,8 +10,8 @@ const navbarHTML = `
     <a href="../index.html" style="color:white; margin-right:15px; text-decoration:none;">Home</a>
     <!-- Blog link can stay on the blog index -->
     <a href="index.html#postsContainer" style="color:white; margin-right:15px; text-decoration:none;">Blog</a>
-    <a href="../about.html" style="color:white; margin-right:15px; text-decoration:none;">About</a>
-    <a href="../contact.html" style="color:white; text-decoration:none;">Contact</a>
+    <a href="..pages/about.html" style="color:white; margin-right:15px; text-decoration:none;">About</a>
+    <a href="..pages/contact.html" style="color:white; text-decoration:none;">Contact</a>
   </div>
 </nav>
 `;
