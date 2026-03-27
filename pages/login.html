@@ -70,7 +70,35 @@ background:#f1f1f1;
     <p><a href="#" id="forgot-password">Forgot Password?</a></p>
     <p>Don't have an account? <a href="sign-up.html">Sign Up</a></p>
   </section>
+<div id="footer-placeholder"></div>
+  <script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
 
+      // Re-apply protected-link logic for links inside the footer
+      const auth = firebase.auth();
+      document.querySelectorAll('.footer-grid .protected-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetPage = link.getAttribute('data-target');
+
+          auth.onAuthStateChanged(user => {
+            if (user) {
+              if (window.location.pathname.endsWith(targetPage)) {
+                window.location.reload();
+              } else {
+                window.location.href = targetPage;
+              }
+            } else {
+              window.location.href = `pages/sign-up.html?redirect=${encodeURIComponent(targetPage)}`;
+            }
+          });
+        });
+      });
+    });
+  </script>
   <script>
     // Firebase config
     const firebaseConfig = {
