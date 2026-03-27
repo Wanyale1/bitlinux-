@@ -341,18 +341,18 @@ and programming tutorials to help you build modern websites.
 <div>
 <h4>Platform</h4>
 <ul>
-<li><a href="pages/docs.html">Docs</a></li>
-<li><a href="pages/pricing.html">Pricing</a></li>
-<li><a href="pages/learn.html">Learn</a></li>
+<li><a href="#" class="protected-link" data-target="pages/docs.html">Docs</a></li>
+<li><a href="#" class="protected-link" data-target="pages/pricing.html">Pricing</a></li>
+<li><a href="#" class="protected-link" data-target="pages/learning.html">Learn</a></li>
 </ul>
 </div>
 
 <div>
 <h4>Resources</h4>
 <ul>
-<li><a href="blog/index.html">Blog</a></li>
-<li><a href="pages/faq.html">FAQ</a></li>
-<li><a href="pages/contact.html">Contact</a></li>
+<li><a href="#" class="protected-link" data-target="blog/index.html">Blog</a></li>
+<li><a href="#" class="protected-link" data-target="pages/faq.html">FAQ</a></li>
+<li><a href="#" class="protected-link" data-target="pages/contact.html">Contact</a></li>
 </ul>
 </div>
 
@@ -363,12 +363,11 @@ and programming tutorials to help you build modern websites.
 </p>
 
 </footer>
-<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 
 <script>
-  // 1. Initialize Firebase first
+  // Initialize Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyCqaLp0H7dGVDWB8kFPMDNnbeYCcs4LufI",
     authDomain: "bitlinux-419e6.firebaseapp.com",
@@ -377,11 +376,10 @@ and programming tutorials to help you build modern websites.
     messagingSenderId: "177680359131",
     appId: "1:177680359131:web:7822d4063d3da2037c76fe"
   };
-
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
 
-  // 2. Protected link behavior
+  // Protected link behavior
   document.querySelectorAll('.protected-link').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault(); // Stop default navigation
@@ -389,8 +387,14 @@ and programming tutorials to help you build modern websites.
 
       auth.onAuthStateChanged(user => {
         if (user) {
-          // User is logged in → go to target page
-          window.location.href = targetPage;
+          // User is logged in
+          if (window.location.pathname.endsWith(targetPage)) {
+            // Already on this page → do nothing or reload
+            window.location.reload(); // or just leave it commented out if you want no reload
+          } else {
+            // Go to target page
+            window.location.href = targetPage;
+          }
         } else {
           // User not logged in → go to sign-up page with redirect
           window.location.href = `pages/sign-up.html?redirect=${encodeURIComponent(targetPage)}`;
@@ -398,17 +402,7 @@ and programming tutorials to help you build modern websites.
       });
     });
   });
-
-  // 3. Optional: redirect only on certain pages, e.g., dashboard
-  // Remove this automatic redirect from homepage
-  /*
-  auth.onAuthStateChanged(function(user) {
-    if (user) {
-      window.location.href = "pages/dashboard.html";
-    }
-  });
-  */
-      </script>
+</script>
 </body>
 
   </html>
