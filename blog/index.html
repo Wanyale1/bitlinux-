@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>BitLinux Blog</title>
 
-<link rel="stylesheet" href="CSS/blog.css">
+<style>
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+background:#f5f7fb;
+margin:0;
+padding:0;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.posts{
+max-width:900px;
+margin:40px auto;
+display:grid;
+grid-template-columns:1fr;
+gap:25px;
+padding:0 20px;
+}
+
+.post-card{
+background:white;
+padding:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+border-radius:8px;
+}
+
+.post-card img{
+width:100%;
+border-radius:6px;
+}
+
+.post-card h2{
+margin:15px 0 10px 0;
+}
+
+.post-card p{
+color:#555;
+}
+
+.read-more{
+display:inline-block;
+margin-top:10px;
+text-decoration:none;
+color:#2563eb;
+font-weight:bold;
+}
+
+</style>
 
 </head>
 
@@ -14,20 +67,42 @@
 
 <header>
 <h1>BitLinux Blog</h1>
-<p>Programming tutorials and developer guides</p>
+<p>Programming, Linux & Technology</p>
 </header>
 
-<section class="posts">
+<div class="posts" id="postsContainer"></div>
 
-<h2>Latest Articles</h2>
 
-<div id="posts-container">
+<script src="js/posts.js"></script>
+
+<script>
+
+const container = document.getElementById("postsContainer");
+
+posts.forEach(post => {
+
+let preview = post.content.replace(/<[^>]*>?/gm, "");
+preview = preview.substring(0,180) + "...";
+
+container.innerHTML += `
+<div class="post-card">
+
+<img src="${post.image}" alt="${post.title}">
+
+<h2>${post.title}</h2>
+
+<p>${preview}</p>
+
+<a class="read-more" href="post.html?id=${post.id}">
+Read Full Article →
+</a>
 
 </div>
+`;
 
-</section>
+});
 
-<script src="Js/blog.js"></script>
+</script>
 
 </body>
-</html>
+  </html>
