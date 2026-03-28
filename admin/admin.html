@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | BitLinux</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/header-footer.css">
+  <link rel="stylesheet" href="../styles/admin.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <div id="header-placeholder"></div>
+
+  <!-- ================= ADMIN DASHBOARD ================= -->
+  <section class="admin-dashboard">
+    <h1>Admin Dashboard</h1>
+    <p>Welcome to the BitLinux admin panel. Manage content, users, and site features here.</p>
+
+    <div class="admin-cards grid">
+      <div class="card">
+        <i class="fas fa-users"></i>
+        <h3>Manage Users</h3>
+        <p>View, edit, or delete registered users.</p>
+        <a href="#" class="btn">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-blog"></i>
+        <h3>Manage Blog</h3>
+        <p>Add or remove articles and blog posts.</p>
+        <a href="#" class="btn">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-video"></i>
+        <h3>Manage Videos</h3>
+        <p>Upload, update, or delete video content.</p>
+        <a href="#" class="btn">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-gamepad"></i>
+        <h3>Manage Games</h3>
+        <p>Add or remove games available to users.</p>
+        <a href="#" class="btn">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-envelope"></i>
+        <h3>Manage Contact</h3>
+        <p>View messages submitted via the contact form.</p>
+        <a href="#" class="btn">Go</a>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top: 30px;">
+      <button id="logout-btn" class="btn">Sign Out</button>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <!-- Scripts -->
+  <script src="../scripts/auth.js"></script>
+  <script src="../scripts/dynamic-content.js"></script>
+
+  <script>
+    // ================= ADMIN AUTH =================
+    const firebaseConfig = {
+      apiKey: "AIzaSyCqaLp0H7dGVDWB8kFPMDNnbeYCcs4LufI",
+      authDomain: "bitlinux-419e6.firebaseapp.com",
+      projectId: "bitlinux-419e6",
+      storageBucket: "bitlinux-419e6.firebasestorage.app",
+      messagingSenderId: "177680359131",
+      appId: "1:177680359131:web:7822d4063d3da2037c76fe"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Redirect if not logged in
+    auth.onAuthStateChanged(user => {
+      if (!user) {
+        window.location.href = "../pages/sign-up.html?redirect=admin/admin.html";
+      }
+    });
+
+    // Sign out button
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      auth.signOut().then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+
+    // Load header & footer
+    loadHTML('../partials/header.html', 'header-placeholder');
+    loadHTML('../partials/footer.html', 'footer-placeholder');
+  </script>
+
+</body>
+                                                     </html>
