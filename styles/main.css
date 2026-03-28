@@ -1,5 +1,13 @@
 /* ================= GENERAL STYLES ================= */
 * {
+  margin  background-color: #2563eb;
+  color: #fff;
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: url('../assets/hero-bg.jpg') c/* ================= GENERAL STYLES ================= */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,8 +15,8 @@
 
 body {
   font-family: 'Arial', Helvetica, sans-serif;
-  background-color: #f8f9fb;
-  color: #333;
+  background-color: #0b0c10; /* Dark cyberpunk background */
+  color: #f0f0f0;
   line-height: 1.6;
 }
 
@@ -27,12 +35,12 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 3rem;
-  color: #2563eb;
+  color: #00fff7; /* Neon cyan */
 }
 
 h2.section-title {
   font-size: 2.5rem;
-  color: #2563eb;
+  color: #ff3cfa; /* Neon pink */
   text-align: center;
   margin-bottom: 40px;
 }
@@ -45,27 +53,34 @@ h2.section-title {
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .btn {
-  background-color: #2563eb;
-  color: #fff;
+  background-color: #ff3cfa; /* Neon pink */
+  color: #0b0c10;
   border: none;
+  box-shadow: 0 0 10px #ff3cfa, 0 0 20px #ff3cfa;
 }
 
 .btn:hover {
-  background-color: #1e40af;
+  background-color: #00fff7; /* Neon cyan hover */
+  color: #0b0c10;
+  box-shadow: 0 0 15px #00fff7, 0 0 30px #00fff7;
 }
 
 .btn-secondary {
-  background-color: #e0e7ff;
-  color: #2563eb;
-  border: 1px solid #2563eb;
+  background-color: transparent;
+  color: #00fff7;
+  border: 2px solid #00fff7;
+  box-shadow: 0 0 10px #00fff7;
 }
 
 .btn-secondary:hover {
-  background-color: #2563eb;
-  color: #fff;
+  background-color: #ff3cfa;
+  color: #0b0c10;
+  border-color: #ff3cfa;
+  box-shadow: 0 0 15px #ff3cfa;
 }
 
 /* ================= HERO ================= */
@@ -74,17 +89,19 @@ h2.section-title {
   color: #fff;
   text-align: center;
   padding: 120px 10%;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #444;
 }
 
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
+  color: #00fff7;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+  color: #f0f0f0;
 }
 
 .hero-buttons a {
@@ -99,29 +116,29 @@ h2.section-title {
 }
 
 .card {
-  background-color: #fff;
+  background-color: #1f1b2e; /* Dark card background */
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(255,60,250,0.2);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card i {
   font-size: 3rem;
-  color: #2563eb;
+  color: #00fff7;
   margin-bottom: 15px;
 }
 
 .card h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #111827;
+  color: #ff3cfa;
 }
 
 .card p {
   font-size: 1rem;
-  color: #555;
+  color: #c0c0ff;
   margin-bottom: 15px;
 }
 
@@ -131,31 +148,34 @@ h2.section-title {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 0 20px #00fff7, 0 0 40px #ff3cfa;
 }
 
 /* ================= CTA ================= */
 .cta {
   text-align: center;
-  background-color: #2563eb;
+  background-color: #0b0c10;
   color: #fff;
   padding: 80px 10%;
   border-radius: 10px;
+  box-shadow: 0 0 20px #ff3cfa inset;
 }
 
 .cta h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #00fff7;
 }
 
 .cta p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+  color: #f0f0f0;
 }
 
 /* ================= SECTIONS ================= */
 .features, .learning {
-  background-color: #f8f9fb;
+  background-color: #0b0c10;
 }
 
 /* ================= RESPONSIVE ================= */
