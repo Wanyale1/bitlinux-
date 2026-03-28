@@ -1,195 +1,179 @@
 /* ================= GENERAL STYLES ================= */
-* {
-  margin  background-color: #2563eb;
-  color: #fff;
+
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
-/* ================= HERO ================= */
-.hero {
-  background: url('../assets/hero-bg.jpg') c/* ================= GENERAL STYLES ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
-  font-family: 'Arial', Helvetica, sans-serif;
-  background-color: #0b0c10; /* Dark cyberpunk background */
-  color: #f0f0f0;
-  line-height: 1.6;
+font-family: 'Arial', Helvetica, sans-serif;
+background-color: #f8f9fb;
+color: #333;
+line-height: 1.6;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+text-decoration: none;
+color: inherit;
 }
 
 section {
-  padding: 60px 10%;
+padding: 60px 10%;
 }
 
 h1, h2, h3, h4 {
-  margin-bottom: 15px;
+margin-bottom: 15px;
 }
 
 h1 {
-  font-size: 3rem;
-  color: #00fff7; /* Neon cyan */
+font-size: 3rem;
+color: #2563eb;
 }
 
 h2.section-title {
-  font-size: 2.5rem;
-  color: #ff3cfa; /* Neon pink */
-  text-align: center;
-  margin-bottom: 40px;
+font-size: 2.5rem;
+color: #2563eb;
+text-align: center;
+margin-bottom: 40px;
 }
 
 /* ================= BUTTONS ================= */
 .btn, .btn-secondary {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: bold;
+display: inline-block;
+padding: 12px 24px;
+border-radius: 6px;
+font-size: 16px;
+cursor: pointer;
+transition: all 0.3s ease;
 }
 
 .btn {
-  background-color: #ff3cfa; /* Neon pink */
-  color: #0b0c10;
-  border: none;
-  box-shadow: 0 0 10px #ff3cfa, 0 0 20px #ff3cfa;
+background-color: #2563eb;
+color: #fff;
+border: none;
 }
 
 .btn:hover {
-  background-color: #00fff7; /* Neon cyan hover */
-  color: #0b0c10;
-  box-shadow: 0 0 15px #00fff7, 0 0 30px #00fff7;
+background-color: #1e40af;
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: #00fff7;
-  border: 2px solid #00fff7;
-  box-shadow: 0 0 10px #00fff7;
+background-color: #e0e7ff;
+color: #2563eb;
+border: 1px solid #2563eb;
 }
 
 .btn-secondary:hover {
-  background-color: #ff3cfa;
-  color: #0b0c10;
-  border-color: #ff3cfa;
-  box-shadow: 0 0 15px #ff3cfa;
+background-color: #2563eb;
+color: #fff;
 }
 
 /* ================= HERO ================= */
 .hero {
-  background: url('../assets/hero-bg.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 120px 10%;
-  border-bottom: 1px solid #444;
+background: url('../assets/hero-bg.jpg') center/cover no-repeat;
+color: #fff;
+text-align: center;
+padding: 120px 10%;
+border-bottom: 1px solid #ddd;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #00fff7;
+font-size: 3rem;
+margin-bottom: 20px;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #f0f0f0;
+font-size: 1.2rem;
+margin-bottom: 30px;
 }
 
 .hero-buttons a {
-  margin: 0 10px;
+margin: 0 10px;
 }
 
 /* ================= GRID & CARDS ================= */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 30px;
 }
 
 .card {
-  background-color: #1f1b2e; /* Dark card background */
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255,60,250,0.2);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+background-color: #fff;
+padding: 25px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+text-align: center;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card i {
-  font-size: 3rem;
-  color: #00fff7;
-  margin-bottom: 15px;
+font-size: 3rem;
+color: #2563eb;
+margin-bottom: 15px;
 }
 
 .card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #ff3cfa;
+font-size: 1.5rem;
+margin-bottom: 10px;
+color: #111827;
 }
 
 .card p {
-  font-size: 1rem;
-  color: #c0c0ff;
-  margin-bottom: 15px;
+font-size: 1rem;
+color: #555;
+margin-bottom: 15px;
 }
 
 .card a.btn-secondary {
-  margin-top: 10px;
+margin-top: 10px;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px #00fff7, 0 0 40px #ff3cfa;
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 /* ================= CTA ================= */
 .cta {
-  text-align: center;
-  background-color: #0b0c10;
-  color: #fff;
-  padding: 80px 10%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #ff3cfa inset;
+text-align: center;
+background-color: #2563eb;
+color: #fff;
+padding: 80px 10%;
+border-radius: 10px;
 }
 
 .cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #00fff7;
+font-size: 2.5rem;
+margin-bottom: 20px;
 }
 
 .cta p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #f0f0f0;
+font-size: 1.2rem;
+margin-bottom: 30px;
 }
 
 /* ================= SECTIONS ================= */
 .features, .learning {
-  background-color: #0b0c10;
+background-color: #f8f9fb;
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2.section-title {
-    font-size: 2rem;
-  }
-  section {
-    padding: 50px 5%;
-  }
-  .hero {
-    padding: 80px 5%;
-  }
+h1 {
+font-size: 2rem;
 }
+h2.section-title {
+font-size: 2rem;
+}
+section {
+padding: 50px 5%;
+}
+.hero {
+padding: 80px 5%;
+}
+}
+
+Change the colour palette I want something of neon cyberpunk
