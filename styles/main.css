@@ -1,8 +1,4 @@
-/* ==============================
-   BitLinux Main CSS
-   ============================== */
-
-/* --- Reset & Base Styles --- */
+/* ================= GENERAL STYLES ================= */
 * {
   margin: 0;
   padding: 0;
@@ -10,152 +6,170 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: 'Arial', Helvetica, sans-serif;
+  background-color: #f8f9fb;
   color: #333;
-  background-color: #f9f9f9;
+  line-height: 1.6;
 }
 
 a {
   text-decoration: none;
-  color: #2563eb;
-  transition: color 0.3s;
+  color: inherit;
 }
 
-a:hover {
-  color: #1d4ed8;
+section {
+  padding: 60px 10%;
 }
 
-/* --- Layout Containers --- */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-/* --- Headings --- */
 h1, h2, h3, h4 {
-  margin-bottom: 1rem;
-  color: #111827;
+  margin-bottom: 15px;
 }
 
-/* --- Buttons --- */
-button {
+h1 {
+  font-size: 3rem;
+  color: #2563eb;
+}
+
+h2.section-title {
+  font-size: 2.5rem;
+  color: #2563eb;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ================= BUTTONS ================= */
+.btn, .btn-secondary {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn {
   background-color: #2563eb;
   color: #fff;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #1d4ed8;
+.btn:hover {
+  background-color: #1e40af;
 }
 
-/* --- Forms --- */
-input, textarea, select {
-  width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+.btn-secondary {
+  background-color: #e0e7ff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
 }
 
-textarea {
-  resize: vertical;
+.btn-secondary:hover {
+  background-color: #2563eb;
+  color: #fff;
 }
 
-/* --- Lists --- */
-ul {
-  list-style-type: none;
+/* ================= HERO ================= */
+.hero {
+  background: url('../assets/hero-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 120px 10%;
+  border-bottom: 1px solid #ddd;
 }
 
-li {
-  margin-bottom: 0.5rem;
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-/* --- Cards / Content Boxes --- */
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons a {
+  margin: 0 10px;
+}
+
+/* ================= GRID & CARDS ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
 .card {
   background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin-bottom: 1.5rem;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- Header & Footer --- */
-/* header-footer.css will add specific styles for header/footer */
-
-/* --- Media --- */
-img, video, audio {
-  max-width: 100%;
-  border-radius: 6px;
+.card i {
+  font-size: 3rem;
+  color: #2563eb;
+  margin-bottom: 15px;
 }
 
-/* --- Tables (if needed) --- */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2rem;
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #111827;
 }
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 0.8rem;
-  text-align: left;
+.card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
 }
 
-th {
-  background-color: #f3f4f6;
+.card a.btn-secondary {
+  margin-top: 10px;
 }
 
-/* --- Responsive Utilities --- */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ================= CTA ================= */
+.cta {
+  text-align: center;
+  background-color: #2563eb;
+  color: #fff;
+  padding: 80px 10%;
+  border-radius: 10px;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* ================= SECTIONS ================= */
+.features, .learning {
+  background-color: #f8f9fb;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .container {
-    width: 95%;
-    padding: 1rem 0;
+  h1 {
+    font-size: 2rem;
   }
-
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.5rem; }
+  h2.section-title {
+    font-size: 2rem;
+  }
+  section {
+    padding: 50px 5%;
+  }
+  .hero {
+    padding: 80px 5%;
+  }
 }
-
-/* --- Admin Page Specific --- */
-.admin-form {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
-}
-
-.admin-form h2 {
-  margin-bottom: 1rem;
-}
-
-.admin-form button {
-  width: auto;
-}
-
-/* --- Alerts / Feedback --- */
-.alert {
-  padding: 0.8rem 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-.alert-success {
-  background-color: #d1fae5;
-  color: #065f46;
-}
-
-.alert-error {
-  background-color: #fee2e2;
-  color: #991b1b;
-    }
